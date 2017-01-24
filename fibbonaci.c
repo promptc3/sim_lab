@@ -1,23 +1,26 @@
 #include <stdio.h>
-int i,j,k,l;
-int array[20]={};
 
-void main()
+int fibonacci(int);
+
+int fibonacci(int x){
+  if(x==1||x==2){
+    return 1; 
+  }
+  else{
+    return fibonacci(x-1) + fibonacci(x-2);
+  }
+}
+
+int main()
 {
-
-array[0] = 0;
-array[1] = 1;
-for(j=2;j<20;j++){
-array[j]=array[j-1]+array[j-2];
-}
-for(i=0;i<20;i++){
-printf("%d\\",array[i]);
-}
-l=0;
-for(i=0;i<20;i++){
-l=l+array[i];
-}
-printf("\nSum of fibonacci sequence upto 20 is %d\n",l);
+  int s = 0;
+  int i;
+  for(i=1;i<20;i++){
+    s += fibonacci(i);
+  }
+ 
+  printf("\nSum of fibonacci sequence upto 20 is %d\n",s);
+  return 0;
 
 }
 
