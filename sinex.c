@@ -30,4 +30,3 @@ float exponent(int power,float num){
   }
   return product;
 }
-  
